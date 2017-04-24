@@ -11,7 +11,7 @@ This was my first Android application. The goal was to make something useful and
 
 I hope you'll find this project useful.
 
-![]([url=http://imgur.com/EMPmOw4][img]http://i.imgur.com/EMPmOw4.png[/img][/url][url=http://imgur.com/PwFEwUl][img]http://i.imgur.com/PwFEwUl.png[/img][/url][url=http://imgur.com/dMrkT9d][img]http://i.imgur.com/dMrkT9d.png[/img][/url][url=http://imgur.com/NUe28Si][img]http://i.imgur.com/NUe28Si.png[/img][/url])
+![][url=http://imgur.com/EMPmOw4][img]http://i.imgur.com/EMPmOw4.png[/img][/url][url=http://imgur.com/PwFEwUl][img]http://i.imgur.com/PwFEwUl.png[/img][/url][url=http://imgur.com/dMrkT9d][img]http://i.imgur.com/dMrkT9d.png[/img][/url][url=http://imgur.com/NUe28Si][img]http://i.imgur.com/NUe28Si.png[/img][/url]
 
 ## Contributing
 Feel free to make improvements, report issues, and create pull requests.
