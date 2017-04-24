@@ -11,7 +11,7 @@ This was my first Android application. The goal was to make something useful and
 
 I hope you'll find this project useful.
 
-![](https://cloud.githubusercontent.com/assets/460525/19927344/a0c98c5e-a0f9-11e6-9703-f48e18f57209.png)
+![]([url=http://imgur.com/EMPmOw4][img]http://i.imgur.com/EMPmOw4.png[/img][/url][url=http://imgur.com/PwFEwUl][img]http://i.imgur.com/PwFEwUl.png[/img][/url][url=http://imgur.com/dMrkT9d][img]http://i.imgur.com/dMrkT9d.png[/img][/url][url=http://imgur.com/NUe28Si][img]http://i.imgur.com/NUe28Si.png[/img][/url])
 
 ## Contributing
 Feel free to make improvements, report issues, and create pull requests.
