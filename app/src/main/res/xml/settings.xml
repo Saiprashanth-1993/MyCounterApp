@@ -2,21 +2,21 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory android:title="@string/settings_controls">
-       <!-- <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="soundsOn"
-            android:summary="@string/settings_sounds_summary"
-            android:title="@string/settings_sounds_title" />-->
+        <!-- <CheckBoxPreference
+             android:defaultValue="false"
+             android:key="soundsOn"
+             android:summary="@string/settings_sounds_summary"
+             android:title="@string/settings_sounds_title" />-->
         <CheckBoxPreference
             android:defaultValue="true"
             android:key="vibrationOn"
             android:summary="@string/settings_vibration_summary"
-            android:title="@string/settings_vibration_title" />
+            android:title="@string/settings_vibration_title"/>
         <CheckBoxPreference
             android:defaultValue="true"
             android:key="hardControlOn"
             android:summary="@string/settings_hard_summary"
-            android:title="@string/settings_hard_title" />
+            android:title="@string/settings_hard_title"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/settings_display">
@@ -25,23 +25,28 @@
             android:entries="@array/themeSelection"
             android:entryValues="@array/themeSelectionData"
             android:key="theme"
-            android:title="@string/settings_theme" />
+            android:title="@string/settings_theme"/>
         <CheckBoxPreference
             android:defaultValue="false"
             android:key="keepScreenOn"
             android:summary="@string/settings_keep_on_summary"
-            android:title="@string/settings_keep_on_title" />
+            android:title="@string/settings_keep_on_title"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/settings_other">
         <Preference
             android:key="removeCounters"
-            android:title="@string/settings_wipe_title" />
+            android:title="@string/settings_wipe_title"/>
         <Preference
-            android:enabled="false"
+            android:enabled="true"
+            android:key="shareApp"
+            android:summary="@string/settings_share_summary"
+            android:title="@string/settings_share_title"/>
+        <Preference
+            android:enabled="true"
             android:key="version"
             android:summary="@string/unknown"
-            android:title="@string/settings_version_title" />
+            android:title="@string/settings_version_title"/>
     </PreferenceCategory>
 
 </PreferenceScreen>

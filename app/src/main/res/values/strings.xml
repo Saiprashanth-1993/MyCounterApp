@@ -41,6 +41,8 @@
     <string name="settings_controls">Controls</string>
     <string name="settings_sounds_title">Turn on sounds</string>
     <string name="settings_sounds_summary">Play sounds</string>
+    <string name="settings_share_title">Share</string>
+    <string name="settings_share_summary">share this app. Enjoy :)</string>
     <string name="settings_vibration_title">Turn on vibration</string>
     <string name="settings_vibration_summary">Vibrate on changes</string>
     <string name="settings_hard_title">Use hardware buttons</string>

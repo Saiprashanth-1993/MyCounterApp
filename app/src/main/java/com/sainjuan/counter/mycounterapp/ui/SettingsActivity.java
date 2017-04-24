@@ -5,8 +5,10 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.Preference;
@@ -22,6 +24,7 @@ import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,10 +34,15 @@ import android.widget.Toast;
 import com.sainjuan.counter.mycounterapp.CounterApplication;
 import com.sainjuan.counter.mycounterapp.R;
 
+import java.io.File;
+import java.util.logging.Logger;
+
 public class SettingsActivity extends PreferenceActivity implements OnPreferenceChangeListener, SharedPreferences
         .OnSharedPreferenceChangeListener {
 
     private static final String KEY_REMOVE_COUNTERS = "removeCounters";
+
+    private static final String KEY_SHARE_APP = "shareApp";
 
     private static final String KEY_VERSION = "version";
 
@@ -94,12 +102,14 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
         findPreference(KEY_THEME).setSummary(getCurrentThemeName());
         findPreference(KEY_REMOVE_COUNTERS)
                 .setOnPreferenceClickListener(getOnRemoveCountersClickListener());
+        findPreference(KEY_SHARE_APP).setOnPreferenceClickListener(getShareClickListener());
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     private void onCreatePreferenceFragment() {
         fragment = new SettingsFragment();
         fragment.setOnRemoveCountersClickListener(getOnRemoveCountersClickListener());
+        fragment.setShareCounterClickListener(getShareClickListener());
         fragment.setAppVersion(getAppVersion());
         fragment.setTheme(getCurrentThemeName());
         getFragmentManager().beginTransaction()
@@ -112,6 +122,16 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
             @Override
             public boolean onPreferenceClick(Preference preference) {
                 showWipeDialog();
+                return true;
+            }
+        };
+    }
+
+    private OnPreferenceClickListener getShareClickListener() {
+        return new OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                shareAppOption();
                 return true;
             }
         };
@@ -245,6 +265,15 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
         }
     }
 
+    private void shareAppOption(){
+        ApplicationInfo app = getApplicationContext().getApplicationInfo();
+        String filePath = app.sourceDir;
+        Intent inte = new Intent(Intent.ACTION_SEND);
+        inte.setType("*/*");
+        inte.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(filePath)));
+        startActivity(Intent.createChooser(inte, "Share app"));
+    }
+
     private void showWipeDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(R.string.settings_wipe_confirmation);
@@ -284,12 +313,18 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
 
         private OnPreferenceClickListener mOnRemoveCountersClickListener;
 
+        private OnPreferenceClickListener mOnshareCounterClickListener;
+
         private String mAppVersion;
 
         private String mTheme;
 
         public void setOnRemoveCountersClickListener(OnPreferenceClickListener onRemoveCountersClickListener) {
             mOnRemoveCountersClickListener = onRemoveCountersClickListener;
+        }
+
+        public void setShareCounterClickListener(OnPreferenceClickListener onShareCounterClickListener) {
+            mOnshareCounterClickListener = onShareCounterClickListener;
         }
 
         public void setAppVersion(String appVersion) {
@@ -307,6 +342,7 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
             findPreference(KEY_VERSION).setSummary(mAppVersion);
             findPreference(KEY_THEME).setSummary(mTheme);
             findPreference(KEY_REMOVE_COUNTERS).setOnPreferenceClickListener(mOnRemoveCountersClickListener);
+            findPreference(KEY_SHARE_APP).setOnPreferenceClickListener(mOnshareCounterClickListener);
         }
     }
 }

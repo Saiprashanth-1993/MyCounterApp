@@ -163,6 +163,7 @@ public class MainActivity extends AppCompatActivity {
                 inte.setType("*/*");
                 inte.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(filePath)));
                 startActivity(Intent.createChooser(inte, "Share app"));
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
