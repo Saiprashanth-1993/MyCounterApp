@@ -12,6 +12,7 @@ This was my first Android application. The goal was to make something useful and
 I hope you'll find this project useful.
 
 ![](http://i.imgur.com/EMPmOw4.png)
+![](http://i.imgur.com/PwFEwUl.png)
 
 ## Contributing
 Feel free to make improvements, report issues, and create pull requests.
