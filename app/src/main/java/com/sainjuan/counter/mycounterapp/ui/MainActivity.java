@@ -156,14 +156,14 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, SettingsActivity.class);
                 startActivity(intent);
                 return true;
-            case R.id.menu_share:
-                ApplicationInfo app = getApplicationContext().getApplicationInfo();
-                String filePath = app.sourceDir;
-                Intent inte = new Intent(Intent.ACTION_SEND);
-                inte.setType("*/*");
-                inte.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(filePath)));
-                startActivity(Intent.createChooser(inte, "Share app"));
-                return true;
+//            case R.id.menu_share:
+//                ApplicationInfo app = getApplicationContext().getApplicationInfo();
+//                String filePath = app.sourceDir;
+//                Intent inte = new Intent(Intent.ACTION_SEND);
+//                inte.setType("*/*");
+//                inte.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(filePath)));
+//                startActivity(Intent.createChooser(inte, "Share app"));
+//                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

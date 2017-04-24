@@ -7,11 +7,11 @@
         android:orderInCategory="10"
         android:title="@string/menu_settings"
         counter:showAsAction="never"/>
-    <item
+    <!--<item
         android:id="@+id/menu_share"
         android:orderInCategory="10"
         android:title="Share"
-        counter:showAsAction="never"/>
+        counter:showAsAction="never"/>-->
     <item
         android:id="@+id/menu_about"
         android:orderInCategory="10"
