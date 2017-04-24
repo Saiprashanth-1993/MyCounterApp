@@ -3,7 +3,9 @@ package com.sainjuan.counter.mycounterapp.ui;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.ActivityCompat;
@@ -21,6 +23,8 @@ import android.widget.FrameLayout;
 
 import com.sainjuan.counter.mycounterapp.CounterApplication;
 import com.sainjuan.counter.mycounterapp.R;
+
+import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -152,6 +156,13 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, SettingsActivity.class);
                 startActivity(intent);
                 return true;
+            case R.id.menu_share:
+                ApplicationInfo app = getApplicationContext().getApplicationInfo();
+                String filePath = app.sourceDir;
+                Intent inte = new Intent(Intent.ACTION_SEND);
+                inte.setType("*/*");
+                inte.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(filePath)));
+                startActivity(Intent.createChooser(inte, "Share app"));
             default:
                 return super.onOptionsItemSelected(item);
         }
