@@ -2,25 +2,25 @@
 <resources>
 
     <style name="AppTheme" parent="@style/Theme.AppCompat.Light">
-        <item name="valueColor">#000000</item>
+        <item name="valueColor">#FF000000</item>
         <item name="colorPrimary">#FF9800</item>
         <item name="colorPrimaryDark">#FB8C00</item>
         <item name="colorButtonNormal">#FF9800</item>
         <item name="drawableDelete">@drawable/ic_action_delete_light</item>
         <item name="drawableEdit">@drawable/ic_action_edit_light</item>
         <item name="drawableReset">@drawable/ic_action_reset_light</item>
-        <item name="drawableSettings">@drawable/ic_action_settings_light</item>
+        <item name="drawableSettings">@drawable/ic_action_settings_dark</item>
     </style>
 
     <style name="AppTheme.Dark" parent="@style/Theme.AppCompat">
-        <item name="valueColor">#ffffff</item>
+        <item name="valueColor">#FFFFFFFF</item>
         <item name="colorPrimary">#FF9800</item>
         <item name="colorPrimaryDark">#FB8C00</item>
         <item name="colorButtonNormal">#FF9800</item>
         <item name="drawableDelete">@drawable/ic_action_delete_dark</item>
         <item name="drawableEdit">@drawable/ic_action_edit_dark</item>
         <item name="drawableReset">@drawable/ic_action_reset_dark</item>
-        <item name="drawableSettings">@drawable/ic_action_settings_dark</item>
+        <item name="drawableSettings">@drawable/ic_action_settings_light</item>
     </style>
 
     <style name="DrawerSelectTheme" parent="AppTheme">
@@ -28,15 +28,15 @@
     </style>
 
     <style name="counter_value">
-        <item name="android:textSize">120sp</item>
+        <item name="android:textSize">130dp</item>
     </style>
 
     <style name="increment_button">
-        <item name="android:textSize">50sp</item>
+        <item name="android:textSize">60dp</item>
     </style>
 
     <style name="decrement_button">
-        <item name="android:textSize">45sp</item>
+        <item name="android:textSize">50dp</item>
     </style>
 
     <style name="editor_style">
